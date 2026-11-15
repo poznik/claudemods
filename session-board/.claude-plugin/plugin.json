@@ -1,0 +1,1 @@
+{ "name": "session-board", "version": "0.1.0", "description": "Pane beside the chat: sessions that are running or finished unread, across all projects", "types": "./types/index.d.ts" }

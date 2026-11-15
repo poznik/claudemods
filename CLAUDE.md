@@ -30,3 +30,22 @@ After adding a mod, append its folder there and restart Claude.
 | Mod | What | Since |
 |---|---|---|
 | [usage-band](usage-band/) | Band above the prompt: reset countdown, 5h/7d usage, context fill | 2026-11-14 |
+| [session-board](session-board/) | Pane beside the chat: running / finished-unread sessions across projects. Prototype, **not installed** | 2026-11-15 |
+
+## What a mod cannot do (checked 2026-11-15, build 2.1.325)
+
+- No DOM/CSS access: a mod draws only at the engine's hook sites (transcript
+  rows, band above the prompt, panes, status line, theme colors and backdrop).
+  The app's left sidebar, tabs, settings and windows are out of reach — no
+  fonts, icons or layout there.
+- In auto mode, app tools that change state (`ccd_sidebar.*` writes) are refused
+  when called from plugin code; read tools (`list_sessions`, `list_sections`)
+  work. Details in [session-board/CLAUDE.md](session-board/CLAUDE.md).
+- A mod lives inside a session. To show something in every session it must be
+  loaded in every session.
+
+## Developing a mod
+
+Write and hot-reload it under `~/.claude/dev-mods/<session id>/<mod>/` (the
+`plugin-authoring` skill sets this up), then copy the finished folder here.
+The Bash heredoc breaks on TSX with quotes — write mod files with the Write tool.
