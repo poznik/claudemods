@@ -31,6 +31,7 @@ After adding a mod, append its folder there and restart Claude.
 |---|---|---|
 | [usage-band](usage-band/) | Band above the prompt: reset countdown, 5h/7d usage, context fill | 2026-11-14 |
 | [session-board](session-board/) | Pane beside the chat: running / finished-unread sessions across projects. Prototype, **not installed** | 2026-11-15 |
+| [message-time](message-time/) | `HH:MM` above each user message and assistant text block in the transcript | 2026-11-16 |
 
 ## What a mod cannot do (checked 2026-11-15, build 2.1.325)
 
@@ -43,6 +44,9 @@ After adding a mod, append its folder there and restart Claude.
   work. Details in [session-board/CLAUDE.md](session-board/CLAUDE.md).
 - A mod lives inside a session. To show something in every session it must be
   loaded in every session.
+- Transcript message render props (`UserMessage`, `AssistantMessage`) carry no
+  timestamp; their `e.requestId` maps to the transcript JSONL (details in
+  [message-time/CLAUDE.md](message-time/CLAUDE.md)).
 
 ## Developing a mod
 

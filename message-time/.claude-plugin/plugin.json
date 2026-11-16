@@ -1,0 +1,6 @@
+{
+  "name": "message-time",
+  "version": "0.1.0",
+  "description": "Shows when each prompt was sent and each reply arrived, above the message in the transcript",
+  "types": "./types/index.d.ts"
+}
