@@ -1,0 +1,6 @@
+{
+  "name": "weekly-chip",
+  "version": "0.1.0",
+  "description": "The weekly limit's used percentage beside the mode labels in the prompt footer, colored by level",
+  "types": "./types/index.d.ts"
+}

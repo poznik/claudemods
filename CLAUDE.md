@@ -32,6 +32,7 @@ After adding a mod, append its folder there and restart Claude.
 | [usage-band](usage-band/) | Band above the prompt: reset countdown, 5h/7d usage, context fill | 2026-11-14 |
 | [session-board](session-board/) | Pane beside the chat: running / finished-unread sessions across projects. Prototype, **not installed** | 2026-11-15 |
 | [message-time](message-time/) | `HH:MM` above each user message and assistant text block in the transcript | 2026-11-16 |
+| [weekly-chip](weekly-chip/) | `7д N%` weekly limit in the prompt footer, grey/yellow/red | 2026-11-16 |
 
 ## What a mod cannot do (checked 2026-11-15, build 2.1.325)
 
@@ -47,6 +48,10 @@ After adding a mod, append its folder there and restart Claude.
 - Transcript message render props (`UserMessage`, `AssistantMessage`) carry no
   timestamp; their `e.requestId` maps to the transcript JSONL (details in
   [message-time/CLAUDE.md](message-time/CLAUDE.md)).
+- The desktop prompt footer (`Opus 5.5 · effort · mode · ◯`) is the app's; a mod
+  adds to it only through `SessionMode`, and only by returning its own tree
+  (a `props.modes` rewrite draws nothing). Details in
+  [weekly-chip/CLAUDE.md](weekly-chip/CLAUDE.md).
 
 ## Developing a mod
 
